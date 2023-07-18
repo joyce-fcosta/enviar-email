@@ -9,8 +9,12 @@ export class ServiceEmailService {
   constructor(private http: HttpClient) {}
 
   EnviarEmail(email: Email) {
-    return this.http.post(`http://localhost:5000/enviarEmail/`, email, {
-      responseType: 'text',
-    });
+    return this.http.post(
+      `https://apienvioemail.azurewebsites.net/enviarEmail`,
+      email,
+      {
+        responseType: 'text',
+      }
+    );
   }
 }
